@@ -62,9 +62,17 @@ INJECT_ENTRY(
 #if defined (__i386__) || defined(__x86_64__)
 	// On intel, per-pthread data is a zone of data that must be allocated.
 	// if not, all function trying to access per-pthread data (all mig functions for instance)
-	// will crash. 
-	extern void __pthread_set_self(char*);
-	__pthread_set_self(dummy_pthread_struct);
+	// will crash.
+    
+    /* Mac OS X 10.0版本的系统库修改了该方法,将__pthread_set_self 改为_pthread_set_self*/
+#ifdef __MAC_10_12
+     extern void _pthread_set_self(char*);
+     _pthread_set_self(dummy_pthread_struct);
+#else
+     extern void __pthread_set_self(char*);
+     __pthread_set_self(dummy_pthread_struct);
+#endif
+    
 #endif
 
 	fprintf(stderr, "mach_inject_bundle: entered in %s, codeOffset: %td, param: %p, paramSize: %lu\n",

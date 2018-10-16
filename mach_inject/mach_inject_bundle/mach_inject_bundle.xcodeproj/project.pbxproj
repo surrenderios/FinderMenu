@@ -294,6 +294,7 @@
 					0xc0000000,
 				);
 				PRODUCT_NAME = mach_inject_bundle;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -319,6 +320,7 @@
 					0xc0000000,
 				);
 				PRODUCT_NAME = mach_inject_bundle;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
 			};
@@ -343,6 +345,7 @@
 					0xc0000000,
 				);
 				PRODUCT_NAME = mach_inject_bundle;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Default;
@@ -351,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				VALID_ARCHS = x86_64;
 			};
 			name = Development;
 		};
@@ -358,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				VALID_ARCHS = x86_64;
 			};
 			name = Deployment;
 		};
@@ -365,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				VALID_ARCHS = x86_64;
 			};
 			name = Default;
 		};
