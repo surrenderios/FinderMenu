@@ -64,7 +64,10 @@ INJECT_ENTRY(
 	// if not, all function trying to access per-pthread data (all mig functions for instance)
 	// will crash.
     
-    /* Mac OS X 10.0版本的系统库修改了该方法,将__pthread_set_self 改为_pthread_set_self*/
+    /*
+     Mac OS X 10.12 change __pthread_set_self in libSystem.B.dylb to _pthread_set_self
+     */
+    
 #ifdef __MAC_10_12
      extern void _pthread_set_self(char*);
      _pthread_set_self(dummy_pthread_struct);
